@@ -46,9 +46,9 @@ describe('SubjectsService', () => {
         useValue: {
           save: jest.fn().mockResolvedValue(mockSubject),
           findOne: jest.fn().mockResolvedValue(subjectGet),
-          find: jest.fn().mockResolvedValue(allSubjects),
-          delete: jest.fn().mockResolvedValue(deleteSubject),
-          update: jest.fn().mockRejectedValue(updateSubject),
+          find: jest.fn().mockReturnValue(allSubjects),
+          delete: jest.fn().mockReturnValue(deleteSubject),
+          update: jest.fn().mockResolvedValue(updateSubject),
         }
       }],
     }).compile();
